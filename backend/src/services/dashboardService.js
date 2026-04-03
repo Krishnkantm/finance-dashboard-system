@@ -38,7 +38,6 @@ const getDashboardData = async(userId)=>{
     const recentTransactions = await Record.find(
         {user: new mongoose.Types.ObjectId(userId)}
     ).sort({date: -1}).limit(5);
-    console.log("recent done");
 
     //6 month trends
     const monthlyTrends = await Record.aggregate([
