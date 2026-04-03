@@ -95,12 +95,6 @@ npm run dev
 npm start
 ```
 
-5. Verify startup
-
-Open `http://localhost:5000/api/health` (or similar health endpoint if implemented).
-
----
-
 ## 🧪 API Endpoints
 
 > Base URL: `http://localhost:5000/api`
