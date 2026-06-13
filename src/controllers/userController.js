@@ -27,9 +27,16 @@ const login = async(req,res)=>{
        const token = generateToken(user);
 
        res.json({
-        success:true,
-        token
-       })
+       success: true,
+       token,
+       user: {
+         _id: user._id,
+         name: user.name,
+         email: user.email,
+         role: user.role,
+         isActive: user.isActive,
+       },
+});
     }
     catch(err){
        res.status(401).json({

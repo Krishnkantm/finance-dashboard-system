@@ -1,6 +1,6 @@
 const recordService = require('../services/recordService.js');
 
-//create record
+
 const createRecord = async (req,res)=>{
     try{
 
@@ -26,7 +26,7 @@ const createRecord = async (req,res)=>{
     }
 };
 
-//get record
+
 const getRecords = async (req,res)=>{
     try{
         const record = await recordService.getRecords(req.user.id,req.query);
