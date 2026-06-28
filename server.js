@@ -17,11 +17,18 @@ app.use(express.json());
 
 connectDB();
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Finance Dashboard API is running"
+  });
+});
+
 app.use('/api/records',recordRoutes);
 app.use('/api/users',userRoutes);
 app.use('/api/dashboard',dashboardRoutes);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT,()=>{
     console.log(`server listening...${PORT}`);
