@@ -12,7 +12,16 @@ const dashboardRoutes = require('./src/routes/dashboardRoutes.js');
 const app = express();
 
 //middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5000",
+      "https://finance-dashboard-system-1-lz5a.onrender.com",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 
 connectDB();
